@@ -3,7 +3,8 @@
 #include "defines.h"
 #include "types.h"
 
-#include "vid.c"
+//#include "vid.c"
+#include "vid.h"
 
 /******** KBD register byte offsets; for char *base *****/
 #define KCNTL 0x00 // 7-6- 5(0=AT)4=RxIntEn 3=TxIntEn
