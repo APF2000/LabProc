@@ -1,5 +1,10 @@
 /******** kbd.c file ******************/
 #include "keymap"
+#include "defines.h"
+#include "types.h"
+
+#include "vid.c"
+
 /******** KBD register byte offsets; for char *base *****/
 #define KCNTL 0x00 // 7-6- 5(0=AT)4=RxIntEn 3=TxIntEn
 #define KSTAT 0x04 // 7-6=TxE 5=TxBusy 4=RXFull 3=RxBusy
