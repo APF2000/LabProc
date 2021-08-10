@@ -32,11 +32,15 @@ void timer_handler();
 #include "vid.c"
 // #include "exceptions.c"
 
-void copy_vectors(){ // same as before }
+void copy_vectors(){ // same as before 
+}
+
 void IRQ_handler() // IRQ interrupt handler in C
 {
 	// read VIC status registers to find out which interrupt
 	int vicstatus = VIC_STATUS;
+	int sicstatus = SIC_STATUS;
+	
 	// VIC status BITs: timer0,1=4, uart0=13, uart1=14
 	if (vicstatus & (1<<4)){ // bit4=1:timer0,1
 		timer_handler(0); // timer0 only
@@ -47,7 +51,8 @@ void IRQ_handler() // IRQ interrupt handler in C
 		}
 	}
 }
-int main()
+
+int main() 
 {
   int i;
   char line[128];
@@ -63,7 +68,7 @@ int main()
   SIC_INTENABLE |= (1<<3); // KBD int=SIC.bit3
   timer_init(); // initialize timer
   timer_start(0); // start timer0
-  64 3 Interrupts and Exceptions Processing
+  // 64 3 Interrupts and Exceptions Processing
   kbd_init(); // initialize keyboard driver
   printf("C3.2 start: test KBD and TIMER drivers\n");
   while(1){

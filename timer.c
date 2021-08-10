@@ -2,6 +2,7 @@
 #include "types.h"
 
 //#include "vid.c"
+#include "vid.h"
 
 // timer register u32 offsets from base address
 #define TLOAD 0x0

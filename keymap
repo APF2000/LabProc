@@ -1,3 +1,4 @@
+#include "defines.h"
 
 /* Scan codes to ASCII for unshifted keys; unused keys are left out */
 char unsh[N_SCAN] = {
