@@ -14,6 +14,8 @@
 #define TMIS 0x5
 #define TBGLOAD 0x6
 
+int timer_clearInterrupt(int n);
+
 typedef volatile struct timer {
   u32 *base; // timer's base address; as u32 pointer
   int tick, hh, mm, ss; // per timer data area

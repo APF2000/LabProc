@@ -65,5 +65,5 @@ int kgets(char s[ ]) // get a string from KBD
     *s++ = c;
     }
     *s = 0;
-    return strlen(s);
+    return strlen((const u8 *)s);
 }
