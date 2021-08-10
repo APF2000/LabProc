@@ -1,5 +1,6 @@
 #include "defines.h"
 #include "types.h"
+#include <stdio.h>
 
 //#include "vid.c"
 #include "vid.h"
@@ -69,7 +70,8 @@ void timer_handler(int n) {
 void timer_start(int n) // timer_start(0), 1, etc.
 {
   TIMER *tp = &timer[n];
-  kprintf("timer_start %d base=%x\n", n, tp->base);
+  //kprintf("timer_start %d base=%x\n", n, tp->base);
+  printf("timer_start %d base=%x\n", n, tp->base);
   *(tp->base+TCNTL) |= 0x80; // set enable bit 7
 }
 

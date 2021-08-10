@@ -5,7 +5,7 @@ arm-none-eabi-gcc -c -mcpu=arm926ej-s -Wall -Wextra -g kbd.c -o kbd.o
 arm-none-eabi-gcc -c -mcpu=arm926ej-s -Wall -Wextra -g string.c -o string.o 
 arm-none-eabi-gcc -c -mcpu=arm926ej-s -Wall -Wextra -g vid.c -o vid.o 
 arm-none-eabi-gcc -c -mcpu=arm926ej-s -Wall -Wextra -g timer.c -o timer.o 
-arm-none-eabi-gcc -c -mcpu=arm926ej-s -Wall -Wextra -g keymap -o keymap.o 
+arm-none-eabi-gcc -c -mcpu=arm926ej-s -Wall -Wextra -g keymap.c -o keymap.o 
 
 arm-none-eabi-as -c -mcpu=arm926ej-s -g startup.s -o startup.o
 arm-none-eabi-as -c -mcpu=arm926ej-s -g ts.s -o ts.o

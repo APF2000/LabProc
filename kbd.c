@@ -6,6 +6,8 @@
 //#include "vid.c"
 #include "vid.h"
 
+#include <stdio.h>
+
 /******** KBD register byte offsets; for char *base *****/
 #define KCNTL 0x00 // 7-6- 5(0=AT)4=RxIntEn 3=TxIntEn
 #define KSTAT 0x04 // 7-6=TxE 5=TxBusy 4=RXFull 3=RxBusy
@@ -31,7 +33,6 @@ int kbd_init()
 void kbd_handler() // KBD interrupt handler in C
 {
     u8 scode, c;
-    int i;
     KBD *kp = &kbd;
     color = RED; // int color in vid.c file
     scode = *(kp->base+KDATA); // read scan code in data register
