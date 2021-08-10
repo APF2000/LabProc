@@ -12,6 +12,17 @@ eabi-gcc script.c -o script.o  && eabi-as startup.s -o startup.o && eabi-ld -T i
 # No outro terminal (sem alias)
 gdb-multiarch -tui --command=/home/arthur/Documents/Poli/LabProc/gcc-arm/docker/files/.gdbinit/qemu -se irq.elf
 
+eabi-gcc test.c -o test.o
+eabi-as vectors.s -o vectors.o
+eabi-ld -T test.ld test.o vectors.o -o test.elf
+eabi-ld -T test.ld test.o vectors.o -o test.elf
+eabi-bin test.elf test.bin
+qemu test.bin
+
+eabi-gcc test.c -o test.o && eabi-as vectors.s -o vectors.o && eabi-ld -T test.ld test.o vectors.o -o test.elf && eabi-ld -T test.ld test.o vectors.o -o test.elf && eabi-bin test.elf test.bin && qemu test.bin
+
+eabi-qemu -se test.elf
+
 # No gdb
 b _start
 b timer_init
