@@ -145,6 +145,7 @@ recupera_registradores:
 	@add r12, r12, r8			@ soma o espaco alocado
 	
 	ldmfa r12!, {r0}					@ recupera cpsr atraves de r0
+	bic r0, r0, #128				@ limpa bit 7 => habilitar interupcoes
 	msr spsr, r0					@ guarda o proximo cpsr pro ^ ter efeito
 	msr cpsr_c, r0					@@@@@@@@@@@ volta pra o modo anterior
 
