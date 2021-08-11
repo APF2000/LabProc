@@ -71,6 +71,11 @@ timer_init:			@ configurar timer
 irq_handler_entry:
 
   	STMFD sp!, {r12}			@ r12 salvo pra depois
+
+	mrs r12, cpsr 					@ salvando o modo corrente em R12
+	orr r12, r12, #128				@ setar bit 7 em 1 => nao permitir interrupcoes
+	msr cpsr_ctl, r12		 		@ incorpora modificacao no cpsr
+
 	ldr r12, =mem				@ pegar endereco de MEM
 		
 	STMFD sp!, {r8, r9, r10, r11}	@ r11, r10 e r9 salvos pra depois
@@ -99,7 +104,7 @@ chaveando:
 	stmfa r12!, {r0}			@ guarda o pc
 
 	mrs r1, cpsr 				@ salvando o modo corrente em R1
-	msr cpsr_ctl, #0b11010011 		@ alterando para modo 13 (supervisor) => sp atual e o sp certo
+	msr cpsr_ctl, #0b11010011 		@ alterando para modo 13 (supervisor, OBS: nao permite interupcoes) => sp atual e o sp certo
 	stmfa r12!, {sp}			@ guarda o sp correcto
 
 	mov r2, lr				@ salva lr
@@ -108,7 +113,7 @@ chaveando:
 	mov lr, r2				@ recupera lr
 
 	mrs r2, cpsr				@ guarda o cpsr temporariamente
-	@orr r2, r2, #0xc0			@ setar bits I = 0 e F = 0 (enable interrupt)
+	orr r2, r2, #128			@ setar bits I = 0 e F = 0 (enable interrupt) => quando for pego, vai poder receber interrupcao
 	stmfa r12!, {r2}			@ guarda o cpsr em MEM
 
 	msr cpsr_c, r1 				@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ volta para o modo anterior (interrupcao) 
@@ -147,7 +152,8 @@ recupera_registradores:
 	ldmfa r12!, {r0}					@ recupera cpsr atraves de r0
 	bic r0, r0, #128				@ limpa bit 7 => habilitar interupcoes
 	msr spsr, r0					@ guarda o proximo cpsr pro ^ ter efeito
-	msr cpsr_c, r0					@@@@@@@@@@@ volta pra o modo anterior
+	eor r0, r0, #128				@ seta bit 7 => desabilitar interupcoes (ipedir interrupcao entre MSR e LDMFA)
+	msr cpsr_c, r0					@ volta pra o modo anterior
 
 	ldmfa r12!, {sp, lr}				@ recupera sp e lr
 
