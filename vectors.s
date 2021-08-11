@@ -134,6 +134,10 @@ recupera_registradores:
 	
 	ldr r9, =qtde_subprocs		@ endereco da qtde de subprocs
 	ldr r10, [r9]				@ valor da qtde de subprocs (offset)
+	
+	mov r11, r10				@ pega valor qtde de subprocs
+	sub r11, r11, #1			@ tira 1 (tirou subproc da espera)
+	str r11, [r9]				@ notifica isso pra memoria
 
 	mov r8, #68					@ constante com a qtde de bytes dos regs
 	mul r10, r10, r8			@ soma de bytes necessarios para guardar registradores = 68

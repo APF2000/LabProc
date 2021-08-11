@@ -23,13 +23,13 @@ void print_uart0(const char *s) {
 }
 
 int counter = 0;
-void __attribute__((interrupt)) print_interrupcao() {
+void /*__attribute__((interrupt))*/ print_interrupcao() {
  /* echo the received character + 1 */
  counter = (counter + 1) % 1000001;
- if(counter >= 1000000)
- {
+ //if(counter >= 1000000)
+ //{
 	print_uart0("#");
- }
+ //}
 }
 
 
