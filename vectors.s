@@ -35,6 +35,8 @@ TIMER0X: .word 0x101E200c 			@timer 0 interrupt clear register
 qtde_subprocs: .word 0x0			@ quantidade de processos interrompidos
 mem:
 	.space 1024 					@ pra dar espaco
+@string_char:
+@	.space 1
 
 handler_timer:
 
