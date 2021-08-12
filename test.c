@@ -25,14 +25,30 @@ static uint32_t state = 0; // identificar padrao ROSEBUD
 
 void prox_passo(int target)
 {
-	if(state == LAST_STATE) can_print = 0;
-
+	if(state == target + 1){
+		 //print_uart0("deu bom + 1");
+		 return;
+	} 
 
 	if(state == target){
-		 (state)++;
-		 print_uart0("deu bom + 1");
+
+		if(state == LAST_STATE){
+			can_print = !can_print;
+			state = 0;
+		}else{
+			(state)++;
+		}
+		//print_uart0("deu bom + 1");
 	}
-	else (state) = 0;
+	else{
+		 (state) = 0;
+		 //can_print = 1;
+	}
+	
+	// if(target == 0){
+	// 	state = 0;
+	// 	return;
+	// }
 }
 
 void __attribute__((interrupt)) irq_handler(){//const char *s) {
@@ -76,7 +92,7 @@ void __attribute__((interrupt)) irq_handler(){//const char *s) {
 		break;
 	 default: 
 	 	state = 0; // reseta a maquina de estados
-		can_print = 1;
+		//can_print = 1;
 		return;
  }
 }
