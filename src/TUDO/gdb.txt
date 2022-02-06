@@ -1,0 +1,20 @@
+0x8380 <quadrado>:	16	3	2	13
+0x8390 <quadrado+16>:	5	10	11	8
+0x83a0 <quadrado+32>:	9	6	7	12
+0x83b0 <quadrado+48>:	4	15	14	1
+0x83c0 <ehmagico>:	1
+0x8380 <quadrado>:	16	3	2	13
+0x8390 <quadrado+16>:	5	10	11	8
+0x83a0 <quadrado+32>:	9	6	7	12
+0x83b0 <quadrado+48>:	4	15	13	1
+0x83c0 <ehmagico>:	0
+0x8388 <quadrado>:	2	7	6	9
+0x8398 <quadrado+16>:	5	1	4	3
+0x83a8 <quadrado+32>:	7	0	0	-509607936
+0x83b8 <atexit>:	-509558771	-382871504	-442544000	-443207680
+0x83b0 <ehmagico>:	0
+0x8388 <quadrado>:	2	7	6	9
+0x8398 <quadrado+16>:	5	1	4	3
+0x83a8 <quadrado+32>:	8	0	1	-509607936
+0x83b8 <atexit>:	-509558771	-382871504	-442544000	-443207680
+0x83b0 <ehmagico>:	1

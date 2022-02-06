@@ -1,0 +1,55 @@
+BEGIN:VCALENDAR
+PRODID:-//zoom.us//iCalendar Event//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+CLASS:PUBLIC
+BEGIN:VTIMEZONE
+TZID:America/Sao_Paulo
+TZURL:http://tzurl.org/zoneinfo-outlook/America/Sao_Paulo
+X-LIC-LOCATION:America/Sao_Paulo
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0300
+TZOFFSETTO:-0200
+TZNAME:BRST
+DTSTART:19701018T000000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=3SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0300
+TZOFFSETTO:-0300
+TZNAME:BRT
+DTSTART:19700215T000000
+RRULE:FREQ=YEARLY;BYMONTH=2;BYDAY=3SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20210513T195832Z
+DTSTART:20210513T200000Z
+DTEND:20210513T213000Z
+SUMMARY:Voroberstufe 1
+RRULE:FREQ=WEEKLY;WKST=SU;UNTIL=20210730T003000Z;INTERVAL=1;BYDAY=TU,TH
+UID:ZOOM96196096700
+TZID:America/Sao_Paulo
+DESCRIPTION:Carla Koch está convidando você para uma reunião Zoom agendad
+ a.\n\nEntrar na reunião Zoom\nhttps://zoom.us/j/96196096700?pwd=cTlRL1Jp
+ czdFWjM4VEwrQlFqU0Jkdz09\n\nID da reunião: 961 9609 6700\nSenha de acess
+ o: 506476\nDispositivo móvel de um toque\n+551146322236\,\,96196096700# 
+ Brasil\n+551146322237\,\,96196096700# Brasil\n\nDiscar pelo seu local\n 
+        +55 11 4632 2236 Brasil\n        +55 11 4632 2237 Brasil\n       
+  +55 11 4680 6788 Brasil\n        +55 11 4700 9668 Brasil\n        +55 2
+ 1 3958 7888 Brasil\n        +1 669 900 6833 Estados Unidos (San Jose)\n 
+        +1 929 205 6099 Estados Unidos (New York)\n        +1 253 215 878
+ 2 Estados Unidos (Tacoma)\n        +1 301 715 8592 Estados Unidos (Washi
+ ngton DC)\n        +1 312 626 6799 Estados Unidos (Chicago)\n        +1 
+ 346 248 7799 Estados Unidos (Houston)\nID da reunião: 961 9609 6700\nLoc
+ alizar seu número local: https://zoom.us/u/abronqscWz\n
+LOCATION:https://zoom.us/j/96196096700?pwd=cTlRL1JpczdFWjM4VEwrQlFqU0Jkdz
+ 09
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR

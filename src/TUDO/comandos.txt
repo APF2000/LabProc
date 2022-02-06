@@ -1,0 +1,10 @@
+target sim
+load
+b main
+b fim
+r
+c
+set logging on
+x/16d quadrado
+x/d ehmagico
+set logging off

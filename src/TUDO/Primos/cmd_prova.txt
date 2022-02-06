@@ -1,0 +1,14 @@
+# arquivo: cmd_prova.txt a.out.txt
+# gera: gdb.txt - saida do gdb 
+target sim
+load
+b main
+b fim
+r
+c
+p $r0
+p $r1
+set logging on
+set logging off
+q
+y

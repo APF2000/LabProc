@@ -1,0 +1,15 @@
+@ Exercicio 4.5.1 do livro
+@ Para debugar este codigo:
+@ gcc assig_pos.s && gdb a.out
+
+    .text
+    .globl	main
+main:
+    MOV r1, #0x2
+    LDR    r2, =arr
+    ADD    r4, r2, #5
+    LDR    r3, [r4], #0
+    ADD    r0, r1, r3
+    SWI 0x0
+arr:
+	.word   0x0, 0x1, 0x2, 0x3, 0x0, 0x1, 0x2, 0x3, 0x0, 0x1, 0x2, 0x3, 0x0, 0x1, 0x2, 0x3

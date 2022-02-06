@@ -1,0 +1,5 @@
+handle SIGUSR1 nostop pass
+layout regs
+target remote localhost:1234
+focus cmd
+load

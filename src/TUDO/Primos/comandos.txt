@@ -1,0 +1,21 @@
+# arquivo: comandos.txt
+# gera: gdb.txt - saida do gdb 
+target sim
+load
+b main
+b fim
+b 17
+r
+c
+p/x $r10
+p/x $r11
+c
+set logging on
+p/x $r10
+p/x $r11
+p/x $r3
+p/x $r5
+x/10x 0x8230
+set logging off
+q
+y
